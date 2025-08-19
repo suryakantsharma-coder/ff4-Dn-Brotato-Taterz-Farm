@@ -1,0 +1,6 @@
+// export const STACKING_CONTRACT_ADDRESS = `0xF7b3392E03d17b8C7b33Bda301B27Cbd494A08d8`; // stacking contract
+// export const STACKING_CONTRACT_ADDRESS = `0x27DC82F22fB722c5ef353FEC2Ff4C50B575Ab0Db`; // stacking contract
+// export const STACKING_CONTRACT_ADDRESS = `0xde44BDC14f523f803Cd01a77bB457D0dEbc7743A`; // stacking contract Mainnet
+export const STACKING_CONTRACT_ADDRESS = `0x7Ae6b4790934B86b8A3E05d643d918205D1d73E5`; // stacking contract Mainnet
+export const NFT_CONTRACT_ADDRESS = '0x73cfE12F9876dADF0E049fd75c73740036CE9A9b'; // nft contract
+export const TOKEN_CONTRACT_ADDRESS = '0xd221cf22B2B9643b44ba0873E08eC1952D52508a'; // token address

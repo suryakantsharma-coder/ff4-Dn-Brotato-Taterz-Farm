@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
@@ -14,13 +14,149 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ededed;
+    --foreground: #0a0a0a;
   }
+}
+
+@font-face {
+  font-family: 'lazy';
+  src: url('/MyFonts/lazr-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'overstreet';
+  src: url('/MyFonts/overstreetbiblebold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: overstreet;
+  font-size: xx-large;
+  font-weight: bolder;
+  overflow: hidden;
+}
+
+.bg_img {
+  width: 100%;
+  height: 100vh;
+  padding-bottom: 100px;
+  background-image: url('../assests/background/background.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  overflow: auto;
+}
+
+/* buttons */
+
+.btn_connect {
+  width: auto;
+  height: 90px;
+  background-image: url('../assests/buttons/DNConnect2.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.btn_connect:hover {
+  width: auto;
+  height: 90px;
+  background-image: url('../assests/buttons/DNConnect2.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn_stake {
+  width: auto;
+  height: 90px;
+  background-image: url('../assests/buttons/FarmButton.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.btn_stake:hover {
+  width: auto;
+  height: 90px;
+  background-image: url('../assests/buttons/FarmButtonHover.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn_unstake {
+  width: auto;
+  height: 90px;
+  background-image: url('../assests/buttons/StopFarming.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.btn_unstake:hover {
+  width: auto;
+  height: 90px;
+  background-image: url('../assests/buttons/StopFarmingHover.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn_claim {
+  width: auto;
+  height: 90px;
+  background-image: url('../assests/buttons/HarvestButton.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.btn_claim:hover {
+  width: auto;
+  height: 90px;
+  background-image: url('../assests/buttons/HarvestButtonHover.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn_disconnect {
+  width: auto;
+  height: 90px;
+  background-image: url('../assests/buttons/DNDisconnect1.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.btn_disconnect:hover {
+  width: auto;
+  height: 90px;
+  background-image: url('../assests/buttons/DNDisconnect2.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Hide scrollbars globally while keeping scrolling */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
 }
