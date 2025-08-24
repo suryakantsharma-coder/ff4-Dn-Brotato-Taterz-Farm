@@ -17,10 +17,10 @@ function Header() {
       {hash && transactionStatus == 'pending' && (
         <div
           className="
-        w-[100%] h-10 bg-[#2B476E] text-[#FFFFFF] flex justify-between items-center sticky top-0 gap-2
+        w-[100%] h-10 bg-[#2B476E] text-[#FFFFFF] flex justify-between items-center sticky top-0 gap-2 px-4
         "
         >
-          <div className="w-[99%] flex justify-center items-center gap-4">
+          <div className=" lg:w-[59%] 2xl:w-[56%] flex justify-end items-center gap-4">
             <div
               className="animate-spin text-[#FFFF8F] inline-block size-4 border-3 border-current border-t-transparent  rounded-full "
               role="status"
@@ -30,7 +30,7 @@ function Header() {
             </div>
             <p>Transaction Status : {transactionStatus}</p>
           </div>
-          <p className="w-[1%] text-red-400 cursor-pointer" onClick={() => clearHash()}>
+          <p className="  text-red-400 cursor-pointer" onClick={() => clearHash()}>
             x
           </p>
         </div>

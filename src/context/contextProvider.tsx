@@ -3,7 +3,7 @@
 import { wagmiAdapter, projectId } from '@/config/wallet';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { createAppKit } from '@reown/appkit/react';
-import { linea } from '@reown/appkit/networks';
+import { linea, sepolia } from '@reown/appkit/networks';
 import React, { type ReactNode } from 'react';
 import { cookieToInitialState, WagmiProvider, type Config } from 'wagmi';
 

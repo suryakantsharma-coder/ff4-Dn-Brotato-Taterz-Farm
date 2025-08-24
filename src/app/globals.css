@@ -54,6 +54,17 @@ body {
   overflow: auto;
 }
 
+.bg_raffle_img {
+  width: 100%;
+  height: 100vh;
+  padding-bottom: 100px;
+  background-image: url('../assests/background/bg_raffle.jpeg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  overflow: auto;
+}
+
 /* buttons */
 
 .btn_connect {
@@ -144,6 +155,25 @@ body {
   width: auto;
   height: 90px;
   background-image: url('../assests/buttons/DNDisconnect2.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn_ticket {
+  width: auto;
+  height: 90px;
+  background-image: url('../assests/buttons/ticketbutton.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.btn_ticket:hover {
+  width: auto;
+  height: 90px;
+  background-image: url('../assests/buttons/ticketbuttonhover.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
