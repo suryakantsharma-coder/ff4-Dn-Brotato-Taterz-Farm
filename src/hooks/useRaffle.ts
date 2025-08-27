@@ -28,6 +28,20 @@ function useRaffle() {
   const isClose = false;
 
   const {
+    data: currentRaffleId,
+    isFetching: isCurrentRaffleIdFetching,
+    isError: isCurrentRaffleIdError,
+    refetch: refetchCurrentRaffleId,
+  } = useReadContract({
+    address: RAFFLE_CONTRACT_ADDRESS,
+    abi: ABI,
+    functionName: 'currentRaffleId',
+    args: [],
+  });
+
+  // console.log({ current: parseInt(currentRaffleId as string) });
+
+  const {
     data: hasEntered,
     isFetching,
     isError,
@@ -36,7 +50,7 @@ function useRaffle() {
     address: RAFFLE_CONTRACT_ADDRESS,
     abi: ABI,
     functionName: 'hasEntered',
-    args: ['1', address],
+    args: [parseInt(currentRaffleId as string) || '1', address],
   });
 
   const {
@@ -60,7 +74,7 @@ function useRaffle() {
     address: RAFFLE_CONTRACT_ADDRESS,
     abi: ABI,
     functionName: 'priceByRaffle',
-    args: ['1'],
+    args: [parseInt(currentRaffleId as string) || '1'],
   });
 
   const {
@@ -73,9 +87,7 @@ function useRaffle() {
 
   const waitForTransactions = async (hash: string) => {
     const provider = new ethers.JsonRpcProvider('https://eth.llamarpc.com');
-    console.log({ provider });
     const tx = await provider.waitForTransaction(hash as `0x${string}`);
-    console.log({ tx });
     return tx;
   };
 
@@ -93,7 +105,6 @@ function useRaffle() {
         args: [RAFFLE_CONTRACT_ADDRESS, currentPrice as bigint],
       });
       setHash(approval as string);
-      console.log({ txHash, approval });
 
       setTimeout(async () => {
         const hash = await writeContractAsync({
@@ -105,14 +116,13 @@ function useRaffle() {
         setHash(hash);
         localStorage.setItem('hash', hash as string);
         localStorage.setItem('isContributed', 'true');
-
         setRaffleStatus(TX_STATUS.COMPLETE);
 
         setTimeout(() => {
-          handleRefresh();
           setRaffleStatus(TX_STATUS.SUCCESS);
+          handleRefresh();
           setIsLoading(false);
-        }, 20000);
+        }, 10000);
       }, 5000);
     } catch (err) {
       setIsLoading(false);
@@ -136,7 +146,6 @@ function useRaffle() {
   };
 
   useEffect(() => {
-    console.log({ balance, currentPrice });
     if ((balance as bigint) >= BigInt(0) && currentPrice) {
       handleBalanceCheck(balance as bigint, currentPrice as bigint);
     }
@@ -173,6 +182,7 @@ function useRaffle() {
     isSufficent,
     setIsSufficent,
     raffleStatus,
+    setRaffleStatus,
     isClose,
 
     isLoading,

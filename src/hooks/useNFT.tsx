@@ -24,7 +24,6 @@ function useNFT({
       if (address && contractAddress) {
         setIsFetching(true);
         const nftsOwnByUsers = await getUserNfts(address);
-        console.log({ nftsOwnByUsers });
         setData(nftsOwnByUsers);
         setIsFetching(false);
       } else {

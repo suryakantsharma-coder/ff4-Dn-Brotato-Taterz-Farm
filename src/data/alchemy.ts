@@ -119,6 +119,5 @@ export const getUserNftsByIds = async (tokens: Array<TokenType>): Promise<Array<
   );
 
   const { nfts } = await response.json();
-  console.log({ nfts });
   return nfts;
 };

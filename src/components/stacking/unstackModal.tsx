@@ -64,7 +64,6 @@ function UnStackModal({ open, onClose }: { open: boolean; onClose: (isSuccess: b
 
   useEffect(() => {
     if (stakedTokens) {
-      console.log(stakedTokens);
       handleNftsWithTokenIds(stakedTokens as Array<string>);
     }
   }, [stakedTokens]);
@@ -79,8 +78,6 @@ function UnStackModal({ open, onClose }: { open: boolean; onClose: (isSuccess: b
   };
 
   const shortenHash = (hash: string): string => `${hash.slice(0, 6)}...${hash.slice(-4)}`;
-
-  console.log({ data });
 
   return (
     <div
